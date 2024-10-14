@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-dark-blue: hsl(
+    233,
+    47%,
+    7%
+  ); /* (main background) */
+  --Dark-desaturated-blue: hsl(
+    244,
+    38%,
+    16%
+  ); /* (card background) */
+  --Soft-violet: hsl(277, 64%, 61%); /* (accent) */
+  /* (main heading, stats) --> white */
+  --Slightly-transparent-white1: hsla(
+    0,
+    0%,
+    100%,
+    0.75
+  ); /* (main paragraph) */
+  --Slightly-transparent-white2: hsla(
+    0,
+    0%,
+    100%,
+    0.6
+  ); /* (stat headings) */
+  --Font-size: 15px;
+  /* - Family: [Inter]
+- Weights: 400, 700
+
+- Family: [Lexend Deca]
+- Weights: 400 */
+}
+
+body {
+  background-color: var(--Very-dark-blue);
+}
+
+.card {
+  width: min(90%, 330px);
+  margin: 90px auto;
+  background-color: var(--Dark-desaturated-blue);
+  font-family: "Inter";
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card__image {
+  background-color: var(--Soft-violet);
+}
+
+.card__image img {
+  content: url(./images/image-header-mobile.jpg);
+  display: block;
+  max-width: 100%;
+  mix-blend-mode: multiply;
+  opacity: 80%;
+}
+
+.card__body {
+  padding: 35px;
+}
+
+.card__title {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+}
+
+.card__title span {
+  color: var(--Soft-violet);
+}
+
+.card__text {
+  max-width: 260px;
+  font-size: var(--Font-size);
+  padding: 16px 0 32px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--Slightly-transparent-white2);
+}
+
+.box__number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.box__type {
+  color: var(--Slightly-transparent-white2);
+  font-family: "Lexend Deca";
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: var(--Font-size);
+}
+
+.box:nth-child(2) {
+  margin: 36px 0;
+}
+
+@media (min-width: 830px) {
+  .card {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 1110px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .card__image {
+    order: 2;
+  }
+  .card__image img {
+    height: 100%;
+    object-fit: cover;
+    content: url(./images/image-header-desktop.jpg);
+  }
+  .card__body {
+    padding: 5.55vw 2vw 0 4.93vw;
+    text-align: left;
+    order: 1;
+    max-width: 570px;
+  }
+  .card__title {
+    padding: 0;
+    font-size: 2.25rem;
+    max-width: 360px;
+  }
+  .card__text {
+    padding: 30px 0 0;
+    max-width: 350px;
+  }
+  .card__stats {
+    padding: 75px 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 350px;
+  }
+  .box:nth-child(2) {
+    margin: 0;
+  }
+}
